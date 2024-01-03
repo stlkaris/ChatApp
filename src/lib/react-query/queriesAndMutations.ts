@@ -64,13 +64,13 @@ import {
         if (lastPage && lastPage.documents.length === 0) {
           return null;
         }
-               // Use the $id of the last document as the cursor.
+  
+        // Use the $id of the last document as the cursor.
         const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
         return lastId;
       },
     });
   };
-  
   export const useSearchPosts = (searchTerm: string) => {
     return useQuery({
       queryKey: [QUERY_KEYS.SEARCH_POSTS, searchTerm],
